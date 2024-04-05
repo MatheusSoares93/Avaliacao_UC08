@@ -1,0 +1,32 @@
+create database OngSite
+use ongsite;
+
+create table Usuario(
+	idUsuario int not null auto_increment,
+	nome varchar(45) not null,
+	endereco varchar(200) not null,
+	email varchar(45) not null,
+	whatsapp decimal(11) not null,
+	primary key(idUsuario)
+);
+
+create table Ong(
+	idOng int not null auto_increment,
+	nome varchar(45) not null,
+	endereco varchar(200) not null,
+	email varchar(45) not null,
+	whatsapp decimal(11) not null,
+	primary key(idOng)
+);
+
+create table Ocorrencia(
+	idItens_Vendidos int not null auto_increment,
+	fk_idUsuario int not null,
+	fk_idOng int not null,
+	descricao varchar(100) not null,
+	endereco varchar(200) not null,
+	data date,	
+	primary key(idItens_Vendidos),
+	foreign key(fk_idUsuario) references Usuario(idUsuario),
+	foreign key(fk_idOng) references Ong(idOng)
+);

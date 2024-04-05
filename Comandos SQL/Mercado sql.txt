@@ -1,0 +1,28 @@
+create database Mercado;
+use mercado;
+
+create table Produto(
+	idProduto int not null auto_increment,
+	nome varchar(45) not null,
+	quantidade int not null,
+	valor_usuario float not null,
+	primary key(idProduto)
+);
+
+create table Venda(
+	idVenda int not null auto_increment,
+	data_venda date not null,
+	valor_total float not null,
+	primary key(idVenda)
+);
+
+create table Itens_Vendidos(
+	idItens_Vendidos int not null auto_increment,
+	fk_idVenda int not null,
+	fk_idProduto int not null,
+	quantidade int not null,
+	valor_venda float not null,	
+	primary key(idItens_Vendidos),
+	foreign key(fk_idVenda) references Venda(idVenda),
+	foreign key(fk_idProduto) references Produto(idProduto)
+);

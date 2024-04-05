@@ -1,0 +1,28 @@
+create database Rifa
+use rifa;
+
+create table Usuario(
+	idUsuario int not null auto_increment,
+	nome varchar(45) not null,
+	primary key(idUsuario)
+);
+
+create table Rifa(
+	idRifa int not null auto_increment,
+	premio varchar(45) not null,
+	data date not null,
+	numeros decimal not null,
+	descricao varchar(100) not null,
+	valor_numero float not null,
+	primary key(idRifa)
+);
+
+create table Numeros_Vendidos(
+	idNumeros_Vendidos int not null auto_increment,
+	fk_idUsuario int not null,
+	fk_idRifa int not null,
+	numero_escolhido int not null,	
+	primary key(idNumeros_Vendidos),
+	foreign key(fk_idUsuario) references Usuario(idUsuario),
+	foreign key(fk_idRifa) references Rifa(idRifa)
+);
