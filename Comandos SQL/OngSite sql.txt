@@ -1,4 +1,4 @@
-create database OngSite
+create database OngSite;
 use ongsite;
 
 create table Usuario(
