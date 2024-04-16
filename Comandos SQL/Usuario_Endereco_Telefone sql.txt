@@ -1,4 +1,4 @@
-create database Usuario_Endereco_Telefone
+create database Usuario_Endereco_Telefone;
 use usuario_endereco_telefone;
 
 create table Endereco(
