@@ -23,7 +23,7 @@ create table Agenda(
 	pago varchar(1) not null,
 	fk_idCliente int not null,
 	fk_idServico int not null,	
-	primary key(idItens_Vendidos),
+	primary key(idAgenda),
 	foreign key(fk_idCliente) references Cliente(idCliente),
 	foreign key(fk_idServico) references Servico(idServico)
 );
