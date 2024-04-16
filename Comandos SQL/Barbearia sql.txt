@@ -1,4 +1,4 @@
-create database Barbearia
+create database Barbearia;
 use barbearia;
 
 create table Cliente(
