@@ -1,4 +1,4 @@
-create database Rifa
+create database Rifa;
 use rifa;
 
 create table Usuario(
